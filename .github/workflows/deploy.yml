@@ -8,16 +8,16 @@ on:
 permissions: 
   contents: write
   pages: write
-  id_token: write
+  id-token: write
 
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
-    enviroment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+  deploy:    
+      environment:
+        name: github-pages
+        url: ${{ steps.deployment.outputs.page_url }}
+      runs-on: ubuntu-latest
 
-    steps:
+      steps:
       - name: Checkout
         uses: actions/checkout@v4
 
